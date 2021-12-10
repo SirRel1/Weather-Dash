@@ -1,0 +1,125 @@
+.btn {
+	height: 35px;
+	width: 244px;
+	margin: 0;
+	position: relative;
+	display: flex;
+	border-radius: 12px;
+	border: none;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	color: blue;
+	font-size: 0.9rem;
+	font-weight: bold;
+	background-color: rgb(189, 19, 61);
+}
+
+#search {
+	margin: 3px;
+	height: 24px;
+	width: 233px;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	resize: none;
+	overflow-x: hidden;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.cityCard {
+	height: 280px;
+	width: 250px;
+	background-color: blue;
+	border-radius: 12px;
+	margin: 5px;
+	padding: 12px;
+	/* position: relative; */
+}
+
+.cityName,
+.cityName2,
+.cityName3,
+.cityName4,
+.cityName5 {
+	color: rgb(21, 223, 156);
+	right: 0;
+	margin: 5px;
+	font-size: 1.7rem;
+	margin-top: 29px;
+	box-shadow: 2px 2px 2px 2px black;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.day1 {
+	box-shadow: 1px 1px 3px 3px rgb(140, 140, 206);
+	position: relative;
+	display: flex;
+	height: 75px;
+	width: 75px;
+	background-color: aqua;
+	justify-content: center;
+	text-align: center;
+	padding: 5px;
+	font-size: 1.2rem;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 10px;
+	margin-top: -40%;
+}
+
+.conditions,
+.conditions2,
+.conditions3,
+.conditions4,
+.conditions5 {
+	position: relative;
+	height: 100px;
+	width: 110px;
+	background-color: rgb(210, 223, 28);
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	margin-left: 54%;
+	flex-wrap: wrap;
+	font-size: 1.7rem;
+	font-family: fantasy;
+	border-radius: 12px;
+	color: rgb(42, 72, 155);
+	box-shadow: 1px 1px 3px 3px rgb(140, 140, 206);
+}
+
+.sunrise {
+	box-shadow: 2px 2px 2px 2px black;
+	color: yellow;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.speed {
+	box-shadow: 2px 2px 2px 2px black;
+	color: yellow;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.humidity {
+	box-shadow: 2px 2px 2px 2px black;
+	color: yellow;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.date,
+.date2,
+.date3,
+.date4,
+.date5 {
+	box-shadow: 2px 2px 2px 2px black;
+	color: yellow;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 5px;
+}
