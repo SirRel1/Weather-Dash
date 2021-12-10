@@ -14,7 +14,7 @@ console.log(city);
 pressOn.addEventListener('click', (e) => {
 	city = searchText.value;
 
-	const requestUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
+	const requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
 
 	fetch(requestUrl)
 		.then((response) => response.json())
@@ -28,7 +28,7 @@ pressOn.addEventListener('click', (e) => {
 				'"',
 				''
 			);
-			const icon = `http://openweathermap.org/img/wn/${iconId}@2x.png`;
+			const icon = `https://openweathermap.org/img/wn/${iconId}@2x.png`;
 			const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
 			sunUp.textContent = 'Sunrise: ' + sunrise;
 			speedEl.textContent = 'Wind Speed: ' + speed;
@@ -41,7 +41,7 @@ pressOn.addEventListener('click', (e) => {
 	console.log(requestUrl);
 });
 
-const requestUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${key}`;
+const requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${key}`;
 
 fetch(requestUrl)
 	.then((response) => response.json())
