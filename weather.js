@@ -106,6 +106,12 @@ pressOn.addEventListener('click', (e) => {
 				data.list[15].weather[0].description,
 				data.list[23].weather[0].description,
 				data.list[31].weather[0].description,
+				data.list[39].main['temp'],
+				data.list[39].dt,
+				data.list[39].wind['speed'],
+				data.list[39].weather[0].icon,
+				data.list[39].main.humidity,
+				data.list[39].weather[0].description,
 			];
 
 			newArr.map((i) => {
@@ -147,11 +153,11 @@ pressOn.addEventListener('click', (e) => {
 				const windEl5 = document.querySelector('.speed6');
 				//Updating speed element for each card
 				windElOne.textContent = 'Wind Speed: ' + newArr[11] + 'mph';
-				windEl1.textContent = 'Wind Speed: ' + newArr[11] + 'mph';
-				windEl2.textContent = 'Wind Speed: ' + newArr[12] + 'mph';
-				windEl3.textContent = 'Wind Speed: ' + newArr[13] + 'mph';
-				windEl4.textContent = 'Wind Speed: ' + newArr[14] + 'mph';
-				windEl5.textContent = 'Wind Speed: ' + newArr[15] + 'mph';
+				windEl1.textContent = 'Wind Speed: ' + newArr[12] + 'mph';
+				windEl2.textContent = 'Wind Speed: ' + newArr[13] + 'mph';
+				windEl3.textContent = 'Wind Speed: ' + newArr[14] + 'mph';
+				windEl4.textContent = 'Wind Speed: ' + newArr[15] + 'mph';
+				windEl5.textContent = 'Wind Speed: ' + newArr[33] + 'mph';
 				//Declaring variables for forecast icons
 				const iconElOne = document.querySelector('.daypic1');
 				const iconEl1 = document.querySelector('.daypic2');
@@ -161,11 +167,11 @@ pressOn.addEventListener('click', (e) => {
 				const iconEl5 = document.querySelector('.daypic6');
 				//Setting variable icons to forecast cards
 				var iconOne = newArr[16];
-				var icon1 = newArr[16];
-				var icon2 = newArr[17];
-				var icon3 = newArr[18];
-				var icon4 = newArr[19];
-				var icon5 = newArr[20];
+				var icon1 = newArr[17];
+				var icon2 = newArr[18];
+				var icon3 = newArr[19];
+				var icon4 = newArr[20];
+				var icon5 = newArr[34];
 
 				const iconpicOne = `https://openweathermap.org/img/wn/${iconOne}@2x.png`;
 				const iconpic1 = `https://openweathermap.org/img/wn/${icon1}@2x.png`;
@@ -189,19 +195,19 @@ pressOn.addEventListener('click', (e) => {
 				const humidEl5 = document.querySelector('.humidity6');
 				//Setting forecast cards to new humidity
 				humidElOne.textContent = 'Humidity: ' + newArr[21];
-				humidEl1.textContent = 'Humidity: ' + newArr[21];
-				humidEl2.textContent = 'Humidity: ' + newArr[22];
-				humidEl3.textContent = 'Humidity: ' + newArr[23];
-				humidEl4.textContent = 'Humidity: ' + newArr[24];
-				humidEl5.textContent = 'Humidity: ' + newArr[25];
+				humidEl1.textContent = 'Humidity: ' + newArr[22];
+				humidEl2.textContent = 'Humidity: ' + newArr[23];
+				humidEl3.textContent = 'Humidity: ' + newArr[24];
+				humidEl4.textContent = 'Humidity: ' + newArr[25];
+				humidEl5.textContent = 'Humidity: ' + newArr[35];
 
 				//Updating cards for five day forecast
 				var milliOne = newArr[5] * 1000;
-				var milli = newArr[5] * 1000;
-				var milli2 = newArr[6] * 1000;
-				var milli3 = newArr[7] * 1000;
-				var milli4 = newArr[8] * 1000;
-				var milli5 = newArr[9] * 1000;
+				var milli = newArr[6] * 1000;
+				var milli2 = newArr[7] * 1000;
+				var milli3 = newArr[8] * 1000;
+				var milli4 = newArr[9] * 1000;
+				var milli5 = newArr[32] * 1000;
 				//Converting Unix into date object
 				const dateObjOne = new Date(milliOne).toDateString();
 				const dateObj = new Date(milli).toDateString();
@@ -218,11 +224,11 @@ pressOn.addEventListener('click', (e) => {
 				newDate5.textContent = 'Date: ' + dateObj5;
 				//Updating text within each div element for conditions
 				newCardOne.textContent = 'Temp:' + ' ' + newArr[0] + '°F';
-				newCard.textContent = 'Temp:' + ' ' + newArr[0] + '°F';
-				newCard2.textContent = 'Temp:' + ' ' + newArr[1] + '°F';
-				newCard3.textContent = 'Temp:' + ' ' + newArr[2] + '°F';
-				newCard4.textContent = 'Temp:' + ' ' + newArr[3] + '°F';
-				newCard5.textContent = 'Temp:' + ' ' + newArr[4] + '°F';
+				newCard.textContent = 'Temp:' + ' ' + newArr[1] + '°F';
+				newCard2.textContent = 'Temp:' + ' ' + newArr[2] + '°F';
+				newCard3.textContent = 'Temp:' + ' ' + newArr[3] + '°F';
+				newCard4.textContent = 'Temp:' + ' ' + newArr[4] + '°F';
+				newCard5.textContent = 'Temp:' + ' ' + newArr[31] + '°F';
 				//Declaring variables for description elements
 				const dElOne = document.querySelector('.sunrise');
 				const dEl1 = document.querySelector('.sunrise2');
@@ -232,11 +238,11 @@ pressOn.addEventListener('click', (e) => {
 				const dEl5 = document.querySelector('.sunrise6');
 				//Setting variable to array data for forecast/descriptions
 				dElOne.textContent = 'Details: ' + newArr[26];
-				dEl1.textContent = 'Details: ' + newArr[26];
-				dEl2.textContent = 'Details: ' + newArr[27];
-				dEl3.textContent = 'Details: ' + newArr[28];
-				dEl4.textContent = 'Details: ' + newArr[29];
-				dEl5.textContent = 'Details: ' + newArr[30];
+				dEl1.textContent = 'Details: ' + newArr[27];
+				dEl2.textContent = 'Details: ' + newArr[28];
+				dEl3.textContent = 'Details: ' + newArr[29];
+				dEl4.textContent = 'Details: ' + newArr[30];
+				dEl5.textContent = 'Details: ' + newArr[36];
 
 				// conditionsEl.textContent = newCard;
 				// conditionsEl.textContent = i;
