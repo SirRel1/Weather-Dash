@@ -14,13 +14,14 @@ body {
 }
 
 button {
-	width: 120px;
+	width: 90%;
 	height: 20px;
 	color: crimson;
 	border: none;
 	border-radius: 15px;
 	background-color: aqua;
 	margin: 5px;
+	font-weight: bolder;
 }
 
 .btn {
@@ -181,7 +182,7 @@ button {
 }
 
 #clear {
-	width: 121px;
+	width: 80%;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
