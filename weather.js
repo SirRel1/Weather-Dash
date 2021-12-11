@@ -37,7 +37,7 @@ fetch(requestUrl)
 		humidEl.textContent = 'Humidity:' + ' ' + humid;
 		weatherEl.innerHTML = `<img src=${icon} />`;
 		conditionsEl.textContent =
-			'Temp: ' + JSON.stringify(data.main.feels_like) + '°F';
+			'Temp: ' + JSON.stringify(Math.ceil(data.main.feels_like)) + '°F';
 	});
 
 console.log(requestUrl);
@@ -223,12 +223,12 @@ pressOn.addEventListener('click', (e) => {
 				newDate4.textContent = 'Date: ' + dateObj4;
 				newDate5.textContent = 'Date: ' + dateObj5;
 				//Updating text within each div element for conditions
-				newCardOne.textContent = 'Temp:' + ' ' + newArr[0] + '°F';
-				newCard.textContent = 'Temp:' + ' ' + newArr[1] + '°F';
-				newCard2.textContent = 'Temp:' + ' ' + newArr[2] + '°F';
-				newCard3.textContent = 'Temp:' + ' ' + newArr[3] + '°F';
-				newCard4.textContent = 'Temp:' + ' ' + newArr[4] + '°F';
-				newCard5.textContent = 'Temp:' + ' ' + newArr[31] + '°F';
+				newCardOne.textContent = 'Temp:' + ' ' + Math.ceil(newArr[0]) + '°F';
+				newCard.textContent = 'Temp:' + ' ' + Math.ceil(newArr[1]) + '°F';
+				newCard2.textContent = 'Temp:' + ' ' + Math.ceil(newArr[2]) + '°F';
+				newCard3.textContent = 'Temp:' + ' ' + Math.ceil(newArr[3]) + '°F';
+				newCard4.textContent = 'Temp:' + ' ' + Math.ceil(newArr[4]) + '°F';
+				newCard5.textContent = 'Temp:' + ' ' + Math.ceil(newArr[31]) + '°F';
 				//Declaring variables for description elements
 				const dElOne = document.querySelector('.sunrise');
 				const dEl1 = document.querySelector('.sunrise2');
