@@ -11,7 +11,9 @@ const pressOn = document.querySelector('.btn');
 const sunUp = document.querySelector('.sunrise');
 const humidEl = document.querySelector('.humidity');
 const speedEl = document.querySelector('.speed');
-console.log(city);
+var recent = document.querySelector('.Recent');
+
+var cities = [];
 
 const requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
 
@@ -19,7 +21,6 @@ fetch(requestUrl)
 	.then((response) => response.json())
 	.then((data) => {
 		// var theData = data;
-		console.log(data);
 
 		const milli = data.dt;
 		const day = new Date(milli * 1000).toDateString();
@@ -42,7 +43,25 @@ fetch(requestUrl)
 console.log(requestUrl);
 
 pressOn.addEventListener('click', (e) => {
+	var recent = document.querySelector('.Recent');
 	city = searchText.value;
+	//Getting value of search and storing it
+	var store = (city) => {
+		cities.push(city);
+		cities.map((i) => localStorage.setItem('City', JSON.stringify(cities)));
+
+		if (cities.length !== 4) {
+			const recentBtn = document.createElement('button');
+			recentBtn.setAttribute('class', 'button2');
+
+			var node = document.createTextNode([city]);
+			recentBtn.appendChild(node);
+			recent.appendChild(recentBtn);
+		} else {
+			console.log('Hey thats alot to store buddy!');
+		}
+	};
+	store(city);
 
 	const requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${key}`;
 
@@ -223,7 +242,7 @@ pressOn.addEventListener('click', (e) => {
 				// conditionsEl.textContent = i;
 				console.log(data.list[0].weather[0].description);
 			});
-
+			city = searchText.value = '';
 			// const speed = data.wind['speed'];
 			// const cityNm = JSON.stringify(data.name).replaceAll('"', '');
 			// const iconId = JSON.stringify(data.weather[0]['icon']).replaceAll('"', '');
@@ -231,10 +250,19 @@ pressOn.addEventListener('click', (e) => {
 
 			// humidEl.textContent = 'Humidity: ' + humid;
 			// sunUp.textContent = sunR;
-			speedEl.textContent = speed;
-			cityEl.textContent = cityNm;
-			weatherEl.innerHTML = `<img src=${JSON.stringify(icon)}/>`;
-			conditionsEl.textContent +=
-				'Temp: ' + JSON.stringify(data.main.feels_like) + '°F';
+			// speedEl.textContent = speed;
+			// cityEl.textContent = cityNm;
+			// weatherEl.innerHTML = `<img src=${JSON.stringify(icon)}/>`;
+			// conditionsEl.textContent +=
+			// 	'Temp: ' + JSON.stringify(data.main.feels_like) + '°F';
 		});
 });
+
+function clearIt() {
+	//Setting attribute to hidden in order to clear div
+	//Also clearing storage for new keys to be accepted
+	var clearBtn = document.querySelector('.button2');
+	console.log('hey');
+	clearBtn.setAttribute('class', 'hidden');
+	localStorage.clear();
+}

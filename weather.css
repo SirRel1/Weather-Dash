@@ -2,6 +2,26 @@ body {
 	background-image: url('bg-img/ClimateBg.png');
 	/* background-repeat: no-repeat; */
 }
+.Recent {
+	position: relative;
+	width: 17%;
+	height: 120px;
+	background-color: antiquewhite;
+	margin-left: 0;
+	margin-top: 2%;
+	border-radius: 8px;
+	padding: 5px;
+}
+
+button {
+	width: 120px;
+	height: 20px;
+	color: crimson;
+	border: none;
+	border-radius: 15px;
+	background-color: aqua;
+	margin: 5px;
+}
 
 .btn {
 	height: 35px;
@@ -24,7 +44,7 @@ body {
 #search {
 	margin: 3px;
 	height: 24px;
-	width: 233px;
+	width: 228px;
 	border-radius: 5px;
 	font-size: 1.2rem;
 	resize: none;
@@ -154,4 +174,23 @@ body {
 	margin: 5px;
 	border-radius: 5px;
 	padding: 5px;
+}
+
+.hidden {
+	display: none;
+}
+
+#clear {
+	width: 121px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	height: 20px;
+	font-weight: bolder;
+	color: aqua;
+	border: none;
+	border-radius: 11px;
+	background-color: crimson;
+	margin: 5px;
 }
