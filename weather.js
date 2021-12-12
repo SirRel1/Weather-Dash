@@ -38,6 +38,19 @@ fetch(requestUrl)
 		weatherEl.innerHTML = `<img src=${icon} />`;
 		conditionsEl.textContent =
 			'Temp: ' + JSON.stringify(Math.ceil(data.main.feels_like)) + '°F';
+
+		let recentCities = JSON.parse(localStorage.getItem('City'));
+		if (recentCities !== null) {
+			recentCities.forEach((i) => {
+				const recentBtn = document.createElement('button');
+
+				var node = document.createTextNode([i]);
+				recentBtn.appendChild(node);
+				recent.appendChild(recentBtn);
+			});
+		} else {
+			console.log('Nothin stored');
+		}
 	});
 
 console.log(requestUrl);
@@ -46,6 +59,7 @@ pressOn.addEventListener('click', (e) => {
 	var recent = document.querySelector('.Recent');
 	city = searchText.value;
 	//Getting value of search and storing it
+
 	var store = (city) => {
 		cities.push(city);
 		cities.map((i) => localStorage.setItem('City', JSON.stringify(cities)));
