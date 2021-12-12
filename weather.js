@@ -43,6 +43,11 @@ fetch(requestUrl)
 		if (recentCities !== null) {
 			recentCities.forEach((i) => {
 				const recentBtn = document.createElement('button');
+				recentBtn.setAttribute('class', 'button2');
+				recentBtn.setAttribute('onclick', 'historyCall(this.id)');
+				recentCities.forEach((i) => {
+					recentBtn.setAttribute('id', i);
+				});
 
 				var node = document.createTextNode([i]);
 				recentBtn.appendChild(node);
@@ -67,6 +72,11 @@ pressOn.addEventListener('click', (e) => {
 		if (cities.length !== 4) {
 			const recentBtn = document.createElement('button');
 			recentBtn.setAttribute('class', 'button2');
+			// recentBtn.setAttribute('id', i);
+			recentBtn.setAttribute('onclick', 'historyCall(this.id)');
+			cities.forEach((i) => {
+				recentBtn.setAttribute('id', i);
+			});
 
 			var node = document.createTextNode([city]);
 			recentBtn.appendChild(node);
@@ -282,7 +292,25 @@ function clearIt() {
 	//Setting attribute to hidden in order to clear div
 	//Also clearing storage for new keys to be accepted
 	var clearBtn = document.querySelector('.button2');
+
+	localStorage.clear();
 	console.log('hey');
 	clearBtn.setAttribute('class', 'hidden');
-	localStorage.clear();
+}
+
+recent.addEventListener(
+	'click',
+	function (e) {
+		e = e || window.event;
+		var target = e.target;
+		var cityTarget = e.path[0].childNodes[0];
+		var stringCity = cityTarget.toString();
+		console.log();
+	},
+	true
+);
+
+function historyCall(a) {
+	city = a;
+	console.log(city);
 }
