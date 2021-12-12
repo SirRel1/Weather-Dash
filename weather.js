@@ -45,9 +45,8 @@ fetch(requestUrl)
 				const recentBtn = document.createElement('button');
 				recentBtn.setAttribute('class', 'button2');
 				recentBtn.setAttribute('onclick', 'historyCall(this.id)');
-				recentCities.forEach((i) => {
-					recentBtn.setAttribute('id', i);
-				});
+
+				recentBtn.setAttribute('id', i);
 
 				var node = document.createTextNode([i]);
 				recentBtn.appendChild(node);
@@ -319,7 +318,7 @@ function historyCall(a) {
 	fetch(requestUrl)
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data.city.name);
+			console.log(a);
 			// var theData = data;
 			// const sunR = new Date(data.city.sunrise * 1000).toLocaleTimeString();
 			const humid = data.list[0].main.humidity;
